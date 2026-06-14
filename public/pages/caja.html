@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caja | LocroPOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/caja">LocroPOS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Alternar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto" data-navigation></ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+        <div>
+          <h1 class="display-6 mb-1">Caja</h1>
+          <p class="text-muted mb-0">Carga de productos, cantidades y totales del pedido.</p>
+        </div>
+        <div class="card shadow-sm">
+          <div class="card-body text-end">
+            <span class="text-muted d-block">Pedido</span>
+            <strong class="fs-2" data-order-number>#000</strong>
+          </div>
+        </div>
+      </div>
+      <section class="row g-3" data-product-grid></section>
+      <section class="card shadow-sm mt-4">
+        <div class="card-body">
+          <h2 class="h4">Resumen</h2>
+          <div class="text-muted">La lógica de cantidades, numeración y guardado se implementará en una próxima iteración.</div>
+          <div class="display-6 text-end mt-3" data-order-total>$0</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/pages/caja.js"></script>
+  </body>
+</html>
