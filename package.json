@@ -13,12 +13,12 @@
     "firebase",
     "firestore",
     "express",
-    "bootstrap"
+    "bootstrap",
+    "github-pages"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase": "^11.1.0"
   },
