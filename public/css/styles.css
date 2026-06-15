@@ -1,0 +1,26 @@
+:root {
+  --locropos-accent: #f57c00;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.product-button {
+  min-height: 96px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.order-card {
+  border-left: 0.5rem solid var(--locropos-accent);
+}
+
+.public-order-number {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 800;
+}
