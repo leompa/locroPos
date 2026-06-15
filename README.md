@@ -7,7 +7,7 @@ LocroPOS is an open-source web application for clubs, festivals and food stands.
 The app is ready to be published directly from the `public/` folder with GitHub Pages.
 
 1. Create a Firebase web app and enable Firestore plus anonymous authentication.
-2. Copy your Firebase web configuration into `public/js/config/firebaseConfig.js`.
+2. Copy your Firebase web configuration into `public/js/config/env.js`.
 3. Push to the `main` branch.
 4. In GitHub, enable **Settings → Pages → Source: GitHub Actions**.
 5. Open the published `github.io` URL and use the app from `/caja/`.
@@ -21,7 +21,7 @@ npm install
 npm start
 ```
 
-Then open <http://localhost:3000/caja/>.
+Create `.env` from `.env.example`, fill in the Firebase values, then open <http://localhost:3000/caja/>. The Express server renders `/js/config/env.js` from those environment variables during local development.
 
 ## Routes
 
@@ -37,3 +37,7 @@ Then open <http://localhost:3000/caja/>.
 - `pedidos`
 - `pedido_items`
 - `configuracion`
+
+## Firebase
+
+LocroPOS uses Firebase anonymous authentication and Firestore only. The browser Firebase module initializes the Firebase app, signs in anonymously, and exposes collection references for `productos`, `pedidos`, `pedido_items`, and `configuracion`.

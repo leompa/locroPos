@@ -8,3 +8,9 @@ export function getFirebasePublicConfig() {
     appId: process.env.FIREBASE_APP_ID || ''
   };
 }
+
+export function renderFirebaseEnvModule() {
+  const config = JSON.stringify(getFirebasePublicConfig(), null, 2);
+
+  return `export const firebaseConfig = Object.freeze(${config});\n`;
+}
