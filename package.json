@@ -13,8 +13,7 @@
     "firebase",
     "firestore",
     "express",
-    "bootstrap",
-    "github-pages"
+    "bootstrap"
   ],
   "author": "",
   "license": "MIT",

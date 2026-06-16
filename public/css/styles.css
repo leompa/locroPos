@@ -24,3 +24,10 @@ body {
   font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 800;
 }
+
+.ticket-preview {
+  background: #fffef7;
+  border: 1px dashed #212529;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}

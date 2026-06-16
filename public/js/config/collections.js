@@ -1,6 +1,7 @@
 export const COLLECTIONS = Object.freeze({
   products: 'productos',
-  orders: 'pedidos',
-  orderItems: 'pedido_items',
+  categories: 'categorias',
+  events: 'eventos',
+  tickets: 'tickets',
   configuration: 'configuracion'
 });

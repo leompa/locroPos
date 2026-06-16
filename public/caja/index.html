@@ -24,21 +24,50 @@
       <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
         <div>
           <h1 class="display-6 mb-1">Caja</h1>
-          <p class="text-muted mb-0">Carga de productos, cantidades y totales del pedido.</p>
+          <p class="text-muted mb-0">Seleccioná productos, acumulá cantidades y emití tickets por evento.</p>
         </div>
         <div class="card shadow-sm">
           <div class="card-body text-end">
-            <span class="text-muted d-block">Pedido</span>
-            <strong class="fs-2" data-order-number>#000</strong>
+            <label class="form-label text-muted" for="eventId">Evento activo</label>
+            <input class="form-control form-control-lg text-end" id="eventId" value="evento-principal" data-event-id>
           </div>
         </div>
       </div>
+
       <section class="row g-3" data-product-grid></section>
+
       <section class="card shadow-sm mt-4">
         <div class="card-body">
-          <h2 class="h4">Resumen</h2>
-          <div class="text-muted">La lógica de cantidades, numeración y guardado se implementará en una próxima iteración.</div>
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
+            <div>
+              <h2 class="h4 mb-1">Resumen</h2>
+              <div class="text-muted">Cada producto vendido genera un ticket con cantidad, descripción, total y estado de retiro.</div>
+            </div>
+            <button class="btn btn-success btn-lg" type="button" data-emit-tickets disabled>Emitir tickets</button>
+          </div>
+          <div class="table-responsive mt-3">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th class="text-end">Cantidad</th>
+                  <th class="text-end">Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody data-cart-items>
+                <tr><td colspan="4" class="text-muted">Todavía no hay productos seleccionados.</td></tr>
+              </tbody>
+            </table>
+          </div>
           <div class="display-6 text-end mt-3" data-order-total>$0</div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm mt-4 d-none" data-issued-tickets-card>
+        <div class="card-body">
+          <h2 class="h4">Tickets emitidos</h2>
+          <div class="row g-3" data-issued-tickets></div>
         </div>
       </section>
     </main>

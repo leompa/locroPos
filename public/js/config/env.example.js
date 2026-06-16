@@ -2,7 +2,8 @@ export const firebaseConfig = Object.freeze({
   apiKey: 'your-api-key',
   authDomain: 'your-project.firebaseapp.com',
   projectId: 'your-project-id',
-  storageBucket: 'your-project.appspot.com',
+  storageBucket: 'your-project.firebasestorage.app',
   messagingSenderId: 'your-sender-id',
-  appId: 'your-app-id'
+  appId: 'your-app-id',
+  measurementId: 'your-measurement-id'
 });
