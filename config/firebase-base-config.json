@@ -1,0 +1,174 @@
+{
+  "firebaseConfig": {
+    "apiKey": "AIzaSyAsqv_bQHXm07yCiFALvEfiIVLOrbBZEOQ",
+    "authDomain": "locropost.firebaseapp.com",
+    "projectId": "locropost",
+    "storageBucket": "locropost.firebasestorage.app",
+    "messagingSenderId": "309307617731",
+    "appId": "1:309307617731:web:350c4339c6677ee6494d76",
+    "measurementId": "G-08GSR7G5CW"
+  },
+  "firestore": {
+    "collections": {
+      "categorias": [
+        {
+          "id": "comida",
+          "data": {
+            "name": "Comida",
+            "description": "Productos preparados para cocina",
+            "sortOrder": 10,
+            "active": true
+          }
+        },
+        {
+          "id": "bebida",
+          "data": {
+            "name": "Bebida",
+            "description": "Bebidas simples de barra",
+            "sortOrder": 20,
+            "active": true
+          }
+        },
+        {
+          "id": "trago",
+          "data": {
+            "name": "Trago",
+            "description": "Tragos preparados de barra",
+            "sortOrder": 30,
+            "active": true
+          }
+        }
+      ],
+      "productos": [
+        {
+          "id": "locro",
+          "data": {
+            "name": "Locro",
+            "description": "Porción de locro",
+            "categoryId": "comida",
+            "area": "cocina",
+            "price": 0,
+            "active": true,
+            "sortOrder": 10
+          }
+        },
+        {
+          "id": "empanadas",
+          "data": {
+            "name": "Empanadas",
+            "description": "Unidad de empanada",
+            "categoryId": "comida",
+            "area": "cocina",
+            "price": 0,
+            "active": true,
+            "sortOrder": 20
+          }
+        },
+        {
+          "id": "panchos",
+          "data": {
+            "name": "Panchos",
+            "description": "Pancho completo",
+            "categoryId": "comida",
+            "area": "cocina",
+            "price": 0,
+            "active": true,
+            "sortOrder": 30
+          }
+        },
+        {
+          "id": "jarra-fernet",
+          "data": {
+            "name": "Jarra Fernet",
+            "description": "Jarra de Fernet",
+            "categoryId": "trago",
+            "area": "barra",
+            "price": 0,
+            "active": true,
+            "sortOrder": 40
+          }
+        },
+        {
+          "id": "vino",
+          "data": {
+            "name": "Vino",
+            "description": "Vaso o botella de vino",
+            "categoryId": "bebida",
+            "area": "barra",
+            "price": 0,
+            "active": true,
+            "sortOrder": 50
+          }
+        },
+        {
+          "id": "cerveza",
+          "data": {
+            "name": "Cerveza",
+            "description": "Cerveza",
+            "categoryId": "bebida",
+            "area": "barra",
+            "price": 0,
+            "active": true,
+            "sortOrder": 60
+          }
+        },
+        {
+          "id": "gaseosa",
+          "data": {
+            "name": "Gaseosa",
+            "description": "Gaseosa",
+            "categoryId": "bebida",
+            "area": "barra",
+            "price": 0,
+            "active": true,
+            "sortOrder": 70
+          }
+        },
+        {
+          "id": "tragos",
+          "data": {
+            "name": "Tragos",
+            "description": "Trago preparado",
+            "categoryId": "trago",
+            "area": "barra",
+            "price": 0,
+            "active": true,
+            "sortOrder": 80
+          }
+        }
+      ],
+      "eventos": [
+        {
+          "id": "evento-principal",
+          "data": {
+            "name": "Evento principal",
+            "description": "Evento inicial de LocroPOS",
+            "active": true,
+            "nextTicketNumber": 0
+          }
+        }
+      ],
+      "configuracion": [
+        {
+          "id": "app",
+          "data": {
+            "currency": "ARS",
+            "locale": "es-AR",
+            "defaultEventId": "evento-principal",
+            "ticketNumberStartsAt": 0,
+            "ticketStates": [
+              "pendiente",
+              "preparando",
+              "listo",
+              "entregado"
+            ],
+            "areas": [
+              "cocina",
+              "barra"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
