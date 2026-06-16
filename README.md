@@ -68,6 +68,10 @@ The app is prepared to use Firestore as the only database. Collections do not ne
 - `tickets`
 - `configuracion`
 
+## Base Firebase JSON
+
+A base configuration and seed document file is available at `config/firebase-base-config.json`. It includes the Firebase web configuration plus initial `categorias`, `productos`, `eventos`, and `configuracion` documents so the Firestore project can be loaded with the same structure expected by the app.
+
 ## Backend evolution
 
 The Express server is the place for future local-network backend features, such as printing tickets on a network printer or exposing operational APIs for devices on the same LAN.
