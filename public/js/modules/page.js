@@ -6,11 +6,11 @@ export async function bootstrapPage(activeRoute, onReady = () => {}) {
 
   try {
     const services = await initializeFirebaseApp();
-    onReady({ services, firebaseReady: true });
+    await onReady({ services, firebaseReady: true });
   } catch (error) {
     console.warn(error.message);
     renderFirebaseWarning(error.message);
-    onReady({ services: null, firebaseReady: false, error });
+    await onReady({ services: null, firebaseReady: false, error });
   }
 }
 

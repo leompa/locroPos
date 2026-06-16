@@ -23,7 +23,7 @@ export function hasFirebaseConfig() {
 
 export function assertFirebaseConfig() {
   if (!hasFirebaseConfig()) {
-    throw new Error('Firebase no está configurado. Complete public/js/config/env.js para GitHub Pages o .env para desarrollo local.');
+    throw new Error('Firebase no está configurado. Complete public/js/config/env.js o .env para desarrollo local.');
   }
 }
 
@@ -37,12 +37,7 @@ export function initializeFirebase() {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const db = getFirestore(app);
-  const collections = {
-    products: collection(db, COLLECTIONS.products),
-    orders: collection(db, COLLECTIONS.orders),
-    orderItems: collection(db, COLLECTIONS.orderItems),
-    configuration: collection(db, COLLECTIONS.configuration)
-  };
+  const collections = buildCollectionReferences(db);
 
   firebaseServices = { app, auth, db, collections };
   return firebaseServices;
@@ -81,4 +76,16 @@ export async function initializeFirebaseApp() {
   const services = initializeFirebase();
   const user = await ensureAnonymousSession();
   return { ...services, user };
+}
+
+function buildCollectionReferences(db) {
+  return Object.fromEntries(
+    Object.entries(COLLECTIONS).map(([key, path]) => {
+      if (!path) {
+        throw new Error(`La colección Firebase "${key}" no tiene path configurado.`);
+      }
+
+      return [key, collection(db, path)];
+    })
+  );
 }

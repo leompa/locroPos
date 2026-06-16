@@ -1,5 +1,5 @@
-import { CATEGORIES, PRODUCTS } from '../config/products.js';
 import { createCartStore } from '../modules/cartStore.js';
+import { loadCatalog } from '../modules/catalog.js';
 import { emitTickets } from '../modules/ticketApi.js';
 import { bootstrapPage } from '../modules/page.js';
 
@@ -9,8 +9,9 @@ const currencyFormatter = new Intl.NumberFormat('es-AR', {
   maximumFractionDigits: 0
 });
 
-bootstrapPage('/caja', () => {
-  const store = createCartStore(PRODUCTS);
+bootstrapPage('/caja', async ({ services }) => {
+  const { categories, products } = await loadCatalog(services);
+  const store = createCartStore(products);
   const grid = document.querySelector('[data-product-grid]');
   const cartItems = document.querySelector('[data-cart-items]');
   const total = document.querySelector('[data-order-total]');
@@ -66,8 +67,8 @@ bootstrapPage('/caja', () => {
   });
 
   function renderProducts() {
-    grid.innerHTML = PRODUCTS.map((product) => {
-      const category = CATEGORIES.find((item) => item.id === product.categoryId);
+    grid.innerHTML = products.map((product) => {
+      const category = categories.find((item) => item.id === product.categoryId);
 
       return `
         <div class="col-6 col-lg-3">
